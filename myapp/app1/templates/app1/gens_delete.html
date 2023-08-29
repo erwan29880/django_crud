@@ -1,0 +1,23 @@
+{% extends 'app1/base.html' %}
+
+{% block title %}Suppression de gens{% endblock %}
+
+{% block content %}
+    <h1>Crud : delete</h1>
+
+    {% if gens is not None %}
+
+        <p>Vous allez supprimer <i><b> {{gens.prenom}} {{gens.nom}} </b></i> de la base de données, êtes vous sûr ?</p>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Supprimer">
+        </form>
+
+    {% else %}
+
+        <p>Entrée supprimée !</p>
+    
+    {% endif %}
+
+{% endblock %}

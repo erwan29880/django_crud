@@ -1,0 +1,28 @@
+{% extends 'app1/base.html' %}
+
+{% block content %}
+    <h1>Crud : read detail</h1>
+
+
+        <table id="gens-read">
+            <thead>
+                <tr>
+                    <th>Prénom</td>
+                    <th>Nom</td>
+                    <th>Tél</td>
+                    <th>Sexe</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ gens.prenom|upper}}</td>
+                    <td>{{ gens.nom|upper }}</td>
+                    <td>{{ gens.tel}}</td>
+                    <td>{{ gens.genre }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{% url 'gens-delete' gens.id %}">delete entry</a>
+
+{% endblock %}

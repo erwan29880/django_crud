@@ -1,0 +1,33 @@
+{% extends 'app1/base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+    <h1>Crud : read</h1>
+
+        <table id="gens-read">
+            <thead>
+                <tr>
+                    <th>Prénom</td>
+                    <th>Nom</td>
+                    <th>Tél</td>
+                    <th>Sexe</td>
+                    <th>lien</th>
+                    <th>modify</th>
+                </tr>
+            </thead>
+            <tbody>
+        {% for gen in gens %}
+                <tr>
+                    <td>{{ gen.prenom|upper}}</td>
+                    <td>{{ gen.nom|upper }}</td>
+                    <td>{{ gen.tel}}</td>
+                    <td>{{ gen.genre }}</td>
+                    <td><a href="{% url 'gens-detail' gen.id %}"><i>détail</i></a></td>
+                    <td><a href="{% url 'gens-change' gen.id %}"><i>modifiy</i></a></td>
+                </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'app1/base.html' %}
+
+{% block title %}Création de gens{% endblock %}
+
+{% block content %}
+    <h1>Crud : Create</h1>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Envoyer">
+      </form>
+      
+   
+
+{% endblock %}
